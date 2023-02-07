@@ -1,0 +1,26 @@
+<header>
+  <h1>Gradients</h1>
+  <p>In modern color spaces</p>
+</header>
+
+<form>
+  <fieldset>
+    <legend>Colors</legend>
+    <input type="color" id="color1" value="#00ff00">
+    <input type="color" id="color2" value="#0000FF">
+  </fieldset>
+  <fieldset>
+    <legend>Steps</legend>
+    <input type="range" id="quantize" min="1" max="100" value="10" />
+  </fieldset>
+  <fieldset>
+    <legend>Hue Interpolation</legend>
+    <label for="showInterpolations">Show shorter, longer, etc<br>
+    <small>
+      Only applies to cylindrical color spaces.<br>
+      <code>shorter</code> is the default.</small></label> 
+    <input type="checkbox" id="showInterpolations">
+  </fieldset> 
+</form>
+
+<main id="app"></main>

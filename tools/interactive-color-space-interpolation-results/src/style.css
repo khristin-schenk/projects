@@ -1,0 +1,88 @@
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+@import "https://unpkg.com/open-props/buttons.min.css" layer(demo.support);
+
+@layer demo {
+  main {
+    display: grid;
+    gap: var(--size-5);
+    inline-size: clamp(90%, calc(var(--size-content-3) * 1.5), 90vw);
+  }
+  
+  :has(#showInterpolations:not(:checked)) main {
+    gap: 0;
+  }
+  
+  fieldset {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+  }
+  
+  section {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20ch 1fr;
+    align-items: center;
+    gap: 2px var(--size-3);
+  }
+  
+  @media (width < 500px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+    
+    section > h3 {
+      grid-column: 1 / span 2;
+    }
+    
+    section > .ramp {
+      grid-column: -1/1;
+    }
+  }
+  
+  section > h3 {
+    font-size: var(--font-size-4);
+    text-transform: uppercase;
+  }
+  
+  .cylindrical > h3 {
+    grid-column: 1 / span 2;
+  }
+  
+  section > p {
+    grid-column: 1;
+  }
+  
+  .ramp {
+    grid-column: 2;
+    display: flex;
+    block-size: 5vh;
+  }
+  
+  .swatch {
+    flex: 1;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-3);
+    margin-block: var(--size-3) var(--size-8);
+    justify-content: center;
+  }
+  
+  header {
+    text-align: center;
+  }
+}
+
+@layer demo.support {
+  body {
+    display: grid;
+    place-content: center;
+    padding: var(--size-5);
+    gap: var(--size-5);
+    justify-items: center;
+  } 
+}

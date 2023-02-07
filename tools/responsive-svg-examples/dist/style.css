@@ -1,0 +1,49 @@
+.everybody-loves-red-corners {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/131442/everybody-loves-red-corners.svg");
+  background-repeat: no-repeat;
+  min-height: 300px;
+  max-width: 1200px;
+  width: 100%;
+  color: #ea4253;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px;
+  background-color: rgba(234, 66, 83, 0.02);
+  border: solid 30px rgba(234, 66, 83, 0.02);
+}
+
+.ridiculously-extravagant-hr {
+  height: 130px;
+  border: none;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/131442/ridiculously-extravagant-hr.svg");
+  background-size: cover;
+}
+
+.special-underline {
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 45px 45px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #d74e09;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/131442/special-underline.svg");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+section {
+  margin: 10rem 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.8rem;
+  width: 95%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  text-align: center;
+}

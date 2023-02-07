@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Sequencer</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="overlay" onclick="closeOverlay()">
+  <div id="shareWrapper" onclick="event.stopPropagation()">
+    <h4>Copy this link and send it to a friend, to share your creation!<br /></h4>
+    <input type="text" id="shareLink" spellcheck="false" onclick="this.setSelectionRange(0, this.value.length)">
+  </div>
+</div>
+<div id="layout">
+  <div id="s1" class="sequencer">
+    <div class="topPanel">
+      <div>
+        <span>Octave:</span>
+        <select id="dlOctave1" onchange="changeOctave(event)">
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option selected="selected">4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </div>
+       <div>
+        <span>Length:</span>
+        <select id="dlLength1" onchange="changeLength(event)">
+          <option>Short</option>
+          <option selected="selected">Medium</option>
+          <option>Long</option>
+        </select>
+      </div>
+      <div>
+        <span>Waveform:</span>
+        <select id="dlWave1" onchange="changeWave(event)">
+          <option selected="selected">Sine</option>
+          <option>Square</option>
+          <option>Triangle</option>
+          <option>Sawtooth</option>
+        </select>
+      </div>
+    </div>
+    <div class="sidePanel">
+      <div>C</div>
+      <div>C#</div>
+      <div>D</div>
+      <div>D#</div>
+      <div>E</div>
+      <div>F</div>
+      <div>F#</div>
+      <div>G</div>
+      <div>G#</div>
+      <div>A</div>
+      <div>A#</div>
+      <div>B</div>
+    </div>
+    <div class="sequencerInner">
+      <!-- Did you know Codepen supports Emmet out of the box? :) https://emmet.io/ -->
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="C#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="D#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="E" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="F#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="G#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="A#" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+      <div class="seqBtn"><input type="checkbox" name="" id="" data-note="B" class="seqBtnInner"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <div id="controlsInner">
+      <i class="fa fa-play" aria-hidden="true" onclick="play()"></i>
+      <i class="fa fa-pause" aria-hidden="true" onclick="pause()"></i>
+      <i class="fa fa-floppy-o" aria-hidden="true" onclick="save()"></i>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></script><script  src="./script.js"></script>
+
+</body>
+</html>

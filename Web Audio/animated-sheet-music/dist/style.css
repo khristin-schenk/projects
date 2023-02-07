@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  font-family: sans-serif;
+}
+
+.remove_note{
+  fill: red;
+  opacity: .5;
+}

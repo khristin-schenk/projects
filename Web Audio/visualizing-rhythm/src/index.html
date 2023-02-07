@@ -1,0 +1,21 @@
+<body>
+<canvas id="main"></canvas>
+
+  <div id="beats">
+    <div class="off beat">
+    <span>Type of Beat:
+    <select id="beatType">
+      <option value="Main">Main</option>
+      <option value="Secondary">Secondary</option>
+      <option value="Off">Off</option>
+    </select></span>
+    <span>How far around Ring:
+    <input type="range" id="location"></span>
+    <span>Ring Number:
+    <input type="number" id="ringNum" min="1" max="4" value="1"></span>
+      <span><button onclick="addBeatFromDocument()">Add Beat</button></span>
+      <span><button onclick="mainBeats=[];secondaryBeats=[];offBeats=[];var beatQueue = [[],[],[]];">Delete All Beats</button></span>
+    </div>
+  </div>
+
+</body>

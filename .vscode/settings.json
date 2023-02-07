@@ -2,5 +2,13 @@
 	"files.autoSave": "onFocusChange",
 	"cSpell.words": [
 		"Gachapon"
-	]
+	],
+	"editor.tabSize": 2,
+	"breadcrumbs.enabled": false,
+	"breadcrumbs.filePath": "off",
+	"editor.bracketPairColorization.enabled": false,
+	"editor.codeActionWidget.showHeaders": false,
+	"editor.codeLens": false,
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "on"
 }

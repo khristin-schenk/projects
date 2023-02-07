@@ -22,8 +22,8 @@ const makeSynths = (count) => {
   for (let i = 0; i < count; i++) {
     let synth = new Tone.Synth({
       oscillator: {
-        type: "square8"
-      }
+        type: "square8",
+      },
     }).toDestination();
 
     synths.push(synth);
@@ -41,7 +41,7 @@ const makeGrid = (notes) => {
     for (let i = 0; i < 8; i++) {
       row.push({
         note: note,
-        isActive: false
+        isActive: false,
       });
     }
     rows.push(row);

@@ -5,10 +5,10 @@
 }
 
 body {
-  max-height:auto;
-  max-width:auto;
-  margin:auto;
-  padding:auto 15px;
+  max-height: auto;
+  max-width: auto;
+  margin: auto;
+  padding: auto 15px;
   background-color: #ff96d3;
   font-family: chippewa-falls, sans-serif;
   font-size: 20px;
@@ -31,7 +31,7 @@ body {
   grid-template-columns: fit-content;
   width: fit-content;
   border-radius: 3px;
-  margin:auto;
+  margin: auto;
 }
 
 .note {
@@ -61,16 +61,16 @@ body {
 }
 
 .play-button {
- float: center;
-  width:200px;
-  height:42px;
+  float: center;
+  width: 200px;
+  height: 42px;
   margin: 5px;
   padding: 0;
   box-sizing: border-box;
   background: #ff96d3;
   border: 1px solid #e70c0f;
   border-radius: 3px;
-  text-transform:lowercase;
+  text-transform: lowercase;
   text-align: center;
   color: #000;
   font-size: 14px;
@@ -79,9 +79,9 @@ body {
   font-family: chippewa-falls, sans-serif;
 }
 .play-button:active {
- float: center;
-  width:200px;
-  height:42px;
+  float: center;
+  width: 200px;
+  height: 42px;
   margin: 5px;
   padding: 0;
   box-sizing: border-box;

@@ -1,0 +1,190 @@
+body {
+  --bg-color: royalblue;
+  min-height: 100vh;
+  margin: 0;
+  background: 
+    var(--bg-color);
+  overflow: hidden;
+  font-family: system-ui;
+  perspective: 500px;
+}
+
+#galleryBtn {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+}
+
+#gallery {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  inset: 0;
+  outline: 1px solid black;
+  pointer-events: none;
+  background: var(--bg-color);
+  opacity: 0;
+  text-align: center;
+}
+#gallery:after {
+  content: '\00D7';
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#gallery .flake {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: scale(.9);
+  display: inline-block;
+}
+
+p {
+  position: absolute;
+  bottom: 0%;
+  left: 1rem;
+  font-size: .8rem;
+  line-height: 175%;
+}
+
+button {
+  border: 0;
+  padding: .5rem 1rem;
+  margin: 1rem 0 0 1rem;
+  border-radius: 1rem;
+  transition: .5s;
+}
+button:hover {
+  box-shadow: 0 5px 5px rgba(0,0,0,.25);
+}
+
+.flake {
+  --flake-size: 300px;
+  width: var(--flake-size);
+  aspect-ratio: 1/1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  transform-origin: 50% 50%;
+  transform: translate(-50%,-50%) scale(1.5);
+  background: var(--bg-color);
+}
+
+.newFlake {
+  animation: spin 4s linear forwards;
+}
+@keyframes spin {
+  to { transform: translate(-50%,-50%) scale(1.5) rotateY(360deg); }
+}
+.sixth {
+  width: 29%;
+  height: 50%;
+  aspect-ratio: 1/1;
+  background: #ededed;
+  position: absolute;
+  left: 35.25%;
+  transform-origin: 50% 100%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%) ;
+  mix-blend-mode: luminosity;
+}
+
+.sixth:nth-child(odd) {
+  background: 
+    linear-gradient(90deg, transparent 50%, rgba(0,0,0,.25)),
+    #ededed;
+}
+
+.sixth:nth-child(even) {
+  background: 
+    linear-gradient(90deg, transparent 50%, rgba(0,0,0,.25)),
+    #f8f8f8;
+}
+
+.sixth:nth-child(2) {
+  transform: scaleX(-1) ;
+}
+.sixth:nth-child(3) {
+  transform: rotate(60deg);
+}
+.sixth:nth-child(4) {
+  transform: rotate(60deg) scaleX(-1) ;
+}
+.sixth:nth-child(5) {
+  transform: rotate(120deg) ;
+}
+.sixth:nth-child(6) {
+  transform: rotate(120deg) scaleX(-1) ;
+}
+.sixth:nth-child(7) {
+  transform: rotate(180deg) ;
+}
+.sixth:nth-child(8) {
+  transform: rotate(180deg) scaleX(-1) ;
+}
+.sixth:nth-child(9) {
+  transform: rotate(240deg) ;
+}
+.sixth:nth-child(10) {
+  transform: rotate(240deg) scaleX(-1) ;
+}
+.sixth:nth-child(11) {
+  transform: rotate(300deg) ;
+}
+.sixth:nth-child(12) {
+  transform: rotate(300deg) scaleX(-1) ;
+}
+
+#flake_box {
+  width: fit-content;
+  position: relative;
+  outline: 1px solid black;
+  border-radius: 0 0 1rem 0;
+}
+
+#flake_box:before {
+  content: '';
+  position: absolute;
+  bottom: 2.5%;
+  width: 95%;
+  height: 95%;
+  background: #efefef;
+  clip-path: polygon(50% 0%, 100% 50% ,50% 100%);
+  z-index: -1;
+}
+
+.flake .sixth svg {
+  transform-origin: 0% 0%;
+  transform: translateY(-2.5%) scale(.29,0.54);
+}
+
+.point {
+  width: 10px;
+  aspect-ratio: 1/1;
+  background: gray;
+  position: absolute;
+  border-radius: 50%;
+}
+.start {
+  width: 20px;
+  background: limegreen;
+}
+
+
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: dimgray;
+  border-radius: 20px;
+  border: 2px solid white;
+}

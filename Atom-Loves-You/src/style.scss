@@ -1,0 +1,19 @@
+body {
+  background-color: #FFD1D7;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#scanned-text {
+  background-color: #FFD1D7;
+
+  canvas {
+    background: #111;
+    margin: 15px;
+  }
+}

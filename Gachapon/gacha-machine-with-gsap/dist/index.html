@@ -2,14 +2,24 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Gacha Machine with GSAP</title>
+  <title>Gacha Machine with GSAP</title>
   <link rel="stylesheet" href="./style.css">
-
+  <script>
+function goBack() {
+  window.history.back()
+}
+</script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div id="app">
   <div class="container">
+    <button onclick="history.back()" class="button">Back</button>
+    <script>
+      function goBack() {
+        window.history.back()
+      }
+    </script>
     <div class="game-layer">
       <div class="machine-container">
         <div class="backboard"></div>

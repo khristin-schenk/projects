@@ -1,0 +1,1058 @@
+/* The version of Bourbon used in this Pen was 4.* */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/18px "Josefin Sans", sans-serif;
+  background: #fff;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  transition: background 0.5s;
+}
+body.glow {
+  background: #000;
+}
+
+.options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #333;
+  color: #fff;
+  width: 260px;
+  height: 100vh;
+}
+.options .moonphase.reset {
+  display: none;
+}
+.options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.options ul li {
+  float: left;
+  width: 50%;
+  padding: 5px 0;
+}
+.options div {
+  padding: 5px 15px;
+}
+.options h2 {
+  color: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  background: #000;
+  display: block;
+}
+.options a, .options a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+.options a:hover {
+  text-decoration: underline;
+}
+.options a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#the-glow {
+  display: none;
+}
+#the-glow.active {
+  width: 250px;
+  position: absolute;
+  top: 287px;
+  z-index: -1;
+  background: transparent;
+  left: 50%;
+  margin-left: -125px;
+  height: 1px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+#the-glow.active.blue {
+  -webkit-animation: glow-blue 10s ease-in-out infinite;
+  -moz-animation: glow-blue 10s ease-in-out infinite;
+  animation: glow-blue 10s ease-in-out infinite;
+  background: rgba(37, 95, 131, 0.5);
+  -webkit-box-shadow: 0px 0px 28px 0px rgba(37, 95, 131, 0.5);
+  -moz-box-shadow: 0px 0px 28px 0px rgba(37, 95, 131, 0.5);
+  box-shadow: 0px 0px 28px 0px rgba(37, 95, 131, 0.5);
+}
+#the-glow.active.green {
+  -webkit-animation: glow-green 10s ease-in-out infinite;
+  -moz-animation: glow-green 10s ease-in-out infinite;
+  animation: glow-green 10s ease-in-out infinite;
+  -webkit-box-shadow: 0px 0px 28px 0px rgba(90, 131, 63, 0.5);
+  -moz-box-shadow: 0px 0px 28px 0px rgba(90, 131, 63, 0.5);
+  box-shadow: 0px 0px 28px 0px rgba(90, 131, 63, 0.5);
+}
+#the-glow.active.purple {
+  -webkit-animation: glow-purple 10s ease-in-out infinite;
+  -moz-animation: glow-purple 10s ease-in-out infinite;
+  animation: glow-purple 10s ease-in-out infinite;
+  -webkit-box-shadow: 0px 0px 28px 0px rgba(67, 39, 149, 0.5);
+  -moz-box-shadow: 0px 0px 28px 0px rgba(67, 39, 149, 0.5);
+  box-shadow: 0px 0px 28px 0px rgba(67, 39, 149, 0.5);
+}
+
+#container {
+  width: 373px;
+  margin: 0 auto;
+  padding-left: 5%;
+}
+@media screen and (max-width: 980px) {
+  #container {
+    margin-left: 300px;
+  }
+}
+
+#reset-link {
+  display: none;
+  margin: 10px 0;
+  text-align: center;
+}
+#reset-link button {
+  border: 1px solid #076fe4;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #8ebcf1;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  background-color: #4294f0;
+  background-image: -webkit-linear-gradient(#4294f0, #0776f3);
+  background-image: linear-gradient(#4294f0, #0776f3);
+  padding: 7px 18px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #0065d6;
+  background-clip: padding-box;
+}
+#reset-link button:hover:not(:disabled) {
+  background-color: #2f87ea;
+  background-image: -webkit-linear-gradient(#2f87ea, #086fe3);
+  background-image: linear-gradient(#2f87ea, #086fe3);
+  box-shadow: inset 0 1px 0 0 #60a2ec;
+  cursor: pointer;
+}
+#reset-link button:active:not(:disabled), #reset-link button:focus:not(:disabled) {
+  border: 1px solid #076fe4;
+  box-shadow: inset 0 0 8px 4px #0868d3, inset 0 0 8px 4px #0868d3;
+}
+#reset-link button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#seconds-hand, #minutes-hand, #hours-hand, #moon-phase-dial {
+  -webkit-transform-origin: 186px 254px;
+  -moz-transform-origin: 186px 254px;
+  -ms-transform-origin: 186px 254px;
+  -o-transform-origin: 186px 254px;
+  transform-origin: 186px 254px;
+}
+
+#seconds-hand.active {
+  -webkit-animation: spin 60s linear infinite;
+  -moz-animation: spin 60s linear infinite;
+  animation: spin 60s linear infinite;
+}
+
+#seconds-hand.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+#moon-phase-dial {
+  -webkit-transform: rotate(230deg);
+  -moz-transform: rotate(230deg);
+  -ms-transform: rotate(230deg);
+  -o-transform: rotate(230deg);
+  transform: rotate(230deg);
+}
+#moon-phase-dial.fast {
+  -webkit-animation: spin 15s linear infinite;
+  -moz-animation: spin 15s linear infinite;
+  animation: spin 15s linear infinite;
+}
+
+#the-crown {
+  cursor: pointer;
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: all 0.75s ease-out;
+  -moz-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+#the-crown.active {
+  -webkit-transform: translate(8px, 5px);
+  -moz-transform: translate(8px, 5px);
+  -ms-transform: translate(8px, 5px);
+  -o-transform: translate(8px, 5px);
+  transform: translate(8px, 5px);
+}
+
+#northern-lights g, #northern-lights path, #northern-lights circle, #northern-lights line, #northern-lights polyline, #northern-lights polygon {
+  -webkit-transition: fill 1s, stroke 1s;
+  -moz-transition: fill 1s, stroke 1s;
+  transition: fill 1s, stroke 1s;
+}
+#northern-lights.blue #dial-background {
+  fill: #D1EEFB;
+}
+#northern-lights.blue #face-grating circle, #northern-lights.blue #face-grating line, #northern-lights.blue #face-grating path {
+  stroke: #1D7CC1;
+}
+#northern-lights.blue #face-grating #inner-dial {
+  fill: #1D7CC1;
+}
+#northern-lights.blue #moon-phase-dial #sky-background {
+  fill: #155588;
+}
+#northern-lights.blue #the-case #layer-1 {
+  fill: #f4f4f4;
+}
+#northern-lights.blue #the-case #layer-2 {
+  fill: #f3f3f3;
+}
+#northern-lights.blue #the-case #layer-3 {
+  fill: #f2f2f2;
+}
+#northern-lights.blue #the-case #layer-4 {
+  fill: #f1f1f1;
+}
+#northern-lights.blue #the-case #layer-5 {
+  fill: #f0f0f0;
+}
+#northern-lights.blue #the-case #layer-6 {
+  fill: #efefef;
+}
+#northern-lights.blue #the-case #layer-7 {
+  fill: #eeeeee;
+}
+#northern-lights.blue #the-case #layer-8 {
+  fill: #ededed;
+}
+#northern-lights.blue #the-case #layer-9 {
+  fill: #edecec;
+}
+#northern-lights.blue #the-case #layer-10 {
+  fill: #ececeb;
+}
+#northern-lights.blue #the-case #layer-11 {
+  fill: #ebebea;
+}
+#northern-lights.blue #the-case #layer-12 {
+  fill: #eaeae9;
+}
+#northern-lights.blue #the-case #layer-13 {
+  fill: #e9e9e9;
+}
+#northern-lights.blue #the-case #layer-14 {
+  fill: #e8e8e8;
+}
+#northern-lights.blue #the-case .lug-main {
+  fill: #e8e8e8;
+}
+#northern-lights.blue #the-case .lug-accent {
+  fill: #eaeaea;
+}
+#northern-lights.blue #the-case #case-front {
+  fill: #e8e8e8;
+  stroke: #d3d3d3;
+}
+#northern-lights.blue #the-case #case-inner {
+  fill: #d8d8d8;
+  stroke: #919191;
+}
+#northern-lights.blue #the-crown path {
+  fill: #e0e0e0;
+}
+#northern-lights.blue #the-crown .crown-fill {
+  fill: #f2f2f2;
+  stroke: #ededed;
+}
+#northern-lights.blue #the-crown .crown-fill.accent {
+  fill: #f9f9fa;
+}
+#northern-lights.blue #the-crown .crown-fill.fill-1 {
+  fill: #f1f1f1;
+}
+#northern-lights.blue #the-crown .crown-fill.fill-2 {
+  fill: #fcfcfc;
+}
+#northern-lights.blue #the-crown .crown-fill.fill-3 {
+  fill: #f7f7f7;
+}
+#northern-lights.blue.glow #dial-background {
+  fill: #63fffe;
+}
+#northern-lights.blue.glow #face-grating circle, #northern-lights.blue.glow #face-grating line, #northern-lights.blue.glow #face-grating path {
+  stroke: #171717;
+}
+#northern-lights.blue.glow #face-grating #inner-dial {
+  fill: #171717;
+}
+#northern-lights.blue.glow #center-dial .one {
+  fill: #171717;
+  stroke: #090909;
+}
+#northern-lights.blue.glow #center-dial .two {
+  fill: #121212;
+  stroke: #090909;
+}
+#northern-lights.blue.glow #center-dial .three {
+  fill: #303030;
+}
+#northern-lights.blue.glow #hours-hand path, #northern-lights.blue.glow #hours-hand line, #northern-lights.blue.glow #seconds-hand path, #northern-lights.blue.glow #seconds-hand line, #northern-lights.blue.glow #minutes-hand path, #northern-lights.blue.glow #minutes-hand line {
+  stroke: #333333;
+}
+#northern-lights.blue.glow #hours-hand .the-fill, #northern-lights.blue.glow #seconds-hand .the-fill, #northern-lights.blue.glow #minutes-hand .the-fill {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.blue.glow #hour-markers circle {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.blue.glow #moon-phase-dial #sky-background {
+  fill: #062738;
+}
+#northern-lights.blue.glow #moon-phase-dial #the-stars polygon {
+  fill: #7efea7;
+}
+#northern-lights.blue.glow .case-back, #northern-lights.blue.glow .lug-bar {
+  fill: #000000;
+}
+#northern-lights.blue.glow #the-case #layer-1 {
+  fill: #040404;
+}
+#northern-lights.blue.glow #the-case #layer-2 {
+  fill: #050505;
+}
+#northern-lights.blue.glow #the-case #layer-3 {
+  fill: #060606;
+}
+#northern-lights.blue.glow #the-case #layer-4 {
+  fill: #070707;
+}
+#northern-lights.blue.glow #the-case #layer-5 {
+  fill: #080808;
+}
+#northern-lights.blue.glow #the-case #layer-6 {
+  fill: #090909;
+}
+#northern-lights.blue.glow #the-case #layer-7 {
+  fill: #101010;
+}
+#northern-lights.blue.glow #the-case #layer-8 {
+  fill: #111111;
+}
+#northern-lights.blue.glow #the-case #layer-9 {
+  fill: #121212;
+}
+#northern-lights.blue.glow #the-case #layer-10 {
+  fill: #131313;
+}
+#northern-lights.blue.glow #the-case #layer-11 {
+  fill: #141414;
+}
+#northern-lights.blue.glow #the-case #layer-12 {
+  fill: #151515;
+}
+#northern-lights.blue.glow #the-case #layer-13 {
+  fill: #161616;
+}
+#northern-lights.blue.glow #the-case #layer-14 {
+  fill: #171717;
+}
+#northern-lights.blue.glow #the-case .lug-main {
+  fill: #171717;
+}
+#northern-lights.blue.glow #the-case .lug-accent {
+  fill: #222222;
+}
+#northern-lights.blue.glow #the-case #case-front {
+  fill: #171717;
+  stroke: #212121;
+}
+#northern-lights.blue.glow #the-case #case-inner {
+  fill: #131415;
+  stroke: #212121;
+}
+#northern-lights.blue.glow #the-crown path {
+  fill: #111111;
+}
+#northern-lights.blue.glow #the-crown .crown-fill {
+  fill: #060606;
+  stroke: #040404;
+}
+#northern-lights.blue.glow #the-crown .crown-fill.accent {
+  fill: #212121;
+}
+#northern-lights.blue.glow #the-crown .crown-fill.fill-1 {
+  fill: #111111;
+}
+#northern-lights.blue.glow #the-crown .crown-fill.fill-2 {
+  fill: #060606;
+}
+#northern-lights.blue.glow #the-crown .crown-fill.fill-3 {
+  fill: #212121;
+}
+#northern-lights.blue.glow #the-face .face-main {
+  fill: #002527;
+  stroke: #000033;
+}
+#northern-lights.blue.glow #the-face .eyebrow {
+  fill: #191919;
+}
+#northern-lights.blue.glow #the-face .eye {
+  fill: #0c3748;
+}
+#northern-lights.blue.glow #the-face .eye-accent {
+  fill: #121212;
+}
+#northern-lights.blue.glow #the-face .pupil {
+  fill: #367c9e;
+}
+#northern-lights.blue.glow #the-face .forehead-line {
+  fill: #1f4e6c;
+}
+#northern-lights.blue.glow #the-face .cheek-line {
+  fill: #010323;
+}
+#northern-lights.blue.glow #the-face .nose {
+  stroke: #072525;
+}
+#northern-lights.blue.glow #the-face .nose-line {
+  fill: #010323;
+}
+#northern-lights.blue.glow #the-face .lip {
+  fill: #0c3748;
+  stroke: #212121;
+}
+#northern-lights.blue.glow #the-face .chin-line {
+  stroke: #010323;
+}
+#northern-lights.green #dial-background {
+  fill: #dde5da;
+}
+#northern-lights.green #face-grating circle, #northern-lights.green #face-grating line, #northern-lights.green #face-grating path {
+  stroke: #00878d;
+}
+#northern-lights.green #face-grating #inner-dial {
+  fill: #00878d;
+}
+#northern-lights.green #moon-phase-dial #sky-background {
+  fill: #105052;
+}
+#northern-lights.green #the-case #layer-1 {
+  fill: #f4f4f4;
+}
+#northern-lights.green #the-case #layer-2 {
+  fill: #f3f3f3;
+}
+#northern-lights.green #the-case #layer-3 {
+  fill: #f2f2f2;
+}
+#northern-lights.green #the-case #layer-4 {
+  fill: #f1f1f1;
+}
+#northern-lights.green #the-case #layer-5 {
+  fill: #f0f0f0;
+}
+#northern-lights.green #the-case #layer-6 {
+  fill: #efefef;
+}
+#northern-lights.green #the-case #layer-7 {
+  fill: #eeeeee;
+}
+#northern-lights.green #the-case #layer-8 {
+  fill: #ededed;
+}
+#northern-lights.green #the-case #layer-9 {
+  fill: #edecec;
+}
+#northern-lights.green #the-case #layer-10 {
+  fill: #ececeb;
+}
+#northern-lights.green #the-case #layer-11 {
+  fill: #ebebea;
+}
+#northern-lights.green #the-case #layer-12 {
+  fill: #eaeae9;
+}
+#northern-lights.green #the-case #layer-13 {
+  fill: #e9e9e9;
+}
+#northern-lights.green #the-case #layer-14 {
+  fill: #e8e8e8;
+}
+#northern-lights.green #the-case .lug-main {
+  fill: #e8e8e8;
+}
+#northern-lights.green #the-case .lug-accent {
+  fill: #eaeaea;
+}
+#northern-lights.green #the-case #case-front {
+  fill: #e8e8e8;
+  stroke: #d3d3d3;
+}
+#northern-lights.green #the-case #case-inner {
+  fill: #d8d8d8;
+  stroke: #919191;
+}
+#northern-lights.green #the-crown path {
+  fill: #e0e0e0;
+}
+#northern-lights.green #the-crown .crown-fill {
+  fill: #f2f2f2;
+  stroke: #ededed;
+}
+#northern-lights.green #the-crown .crown-fill.accent {
+  fill: #f9f9fa;
+}
+#northern-lights.green #the-crown .crown-fill.fill-1 {
+  fill: #f1f1f1;
+}
+#northern-lights.green #the-crown .crown-fill.fill-2 {
+  fill: #fcfcfc;
+}
+#northern-lights.green #the-crown .crown-fill.fill-3 {
+  fill: #f7f7f7;
+}
+#northern-lights.green.glow #dial-background {
+  fill: #8bff61;
+}
+#northern-lights.green.glow #face-grating circle, #northern-lights.green.glow #face-grating line, #northern-lights.green.glow #face-grating path {
+  stroke: #171717;
+}
+#northern-lights.green.glow #face-grating #inner-dial {
+  fill: #171717;
+}
+#northern-lights.green.glow #center-dial .one {
+  fill: #171717;
+  stroke: #090909;
+}
+#northern-lights.green.glow #center-dial .two {
+  fill: #121212;
+  stroke: #090909;
+}
+#northern-lights.green.glow #center-dial .three {
+  fill: #303030;
+}
+#northern-lights.green.glow #hours-hand path, #northern-lights.green.glow #hours-hand line, #northern-lights.green.glow #seconds-hand path, #northern-lights.green.glow #seconds-hand line, #northern-lights.green.glow #minutes-hand path, #northern-lights.green.glow #minutes-hand line {
+  stroke: #333333;
+}
+#northern-lights.green.glow #hours-hand .the-fill, #northern-lights.green.glow #seconds-hand .the-fill, #northern-lights.green.glow #minutes-hand .the-fill {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.green.glow #hour-markers circle {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.green.glow #moon-phase-dial #sky-background {
+  fill: #06370a;
+}
+#northern-lights.green.glow #moon-phase-dial #the-stars polygon {
+  fill: #7efea7;
+}
+#northern-lights.green.glow .case-back, #northern-lights.green.glow .lug-bar {
+  fill: #000000;
+}
+#northern-lights.green.glow #the-case #layer-1 {
+  fill: #040404;
+}
+#northern-lights.green.glow #the-case #layer-2 {
+  fill: #050505;
+}
+#northern-lights.green.glow #the-case #layer-3 {
+  fill: #060606;
+}
+#northern-lights.green.glow #the-case #layer-4 {
+  fill: #070707;
+}
+#northern-lights.green.glow #the-case #layer-5 {
+  fill: #080808;
+}
+#northern-lights.green.glow #the-case #layer-6 {
+  fill: #090909;
+}
+#northern-lights.green.glow #the-case #layer-7 {
+  fill: #101010;
+}
+#northern-lights.green.glow #the-case #layer-8 {
+  fill: #111111;
+}
+#northern-lights.green.glow #the-case #layer-9 {
+  fill: #121212;
+}
+#northern-lights.green.glow #the-case #layer-10 {
+  fill: #131313;
+}
+#northern-lights.green.glow #the-case #layer-11 {
+  fill: #141414;
+}
+#northern-lights.green.glow #the-case #layer-12 {
+  fill: #151515;
+}
+#northern-lights.green.glow #the-case #layer-13 {
+  fill: #161616;
+}
+#northern-lights.green.glow #the-case #layer-14 {
+  fill: #171717;
+}
+#northern-lights.green.glow #the-case .lug-main {
+  fill: #171717;
+}
+#northern-lights.green.glow #the-case .lug-accent {
+  fill: #222222;
+}
+#northern-lights.green.glow #the-case #case-front {
+  fill: #171717;
+  stroke: #212121;
+}
+#northern-lights.green.glow #the-case #case-inner {
+  fill: #131415;
+  stroke: #212121;
+}
+#northern-lights.green.glow #the-crown path {
+  fill: #111111;
+}
+#northern-lights.green.glow #the-crown .crown-fill {
+  fill: #060606;
+  stroke: #040404;
+}
+#northern-lights.green.glow #the-crown .crown-fill.accent {
+  fill: #212121;
+}
+#northern-lights.green.glow #the-crown .crown-fill.fill-1 {
+  fill: #111111;
+}
+#northern-lights.green.glow #the-crown .crown-fill.fill-2 {
+  fill: #060606;
+}
+#northern-lights.green.glow #the-crown .crown-fill.fill-3 {
+  fill: #212121;
+}
+#northern-lights.green.glow #the-face .face-main {
+  fill: #1c2416;
+  stroke: #000033;
+}
+#northern-lights.green.glow #the-face .eyebrow {
+  fill: #191919;
+}
+#northern-lights.green.glow #the-face .eye {
+  fill: #122a08;
+}
+#northern-lights.green.glow #the-face .eye-accent {
+  fill: #121212;
+}
+#northern-lights.green.glow #the-face .pupil {
+  fill: #244113;
+}
+#northern-lights.green.glow #the-face .forehead-line {
+  fill: #2d4a1c;
+}
+#northern-lights.green.glow #the-face .cheek-line {
+  fill: #010323;
+}
+#northern-lights.green.glow #the-face .nose {
+  stroke: #072525;
+}
+#northern-lights.green.glow #the-face .nose-line {
+  fill: #010323;
+}
+#northern-lights.green.glow #the-face .lip {
+  fill: #122a08;
+  stroke: #212121;
+}
+#northern-lights.green.glow #the-face .chin-line {
+  stroke: #010323;
+}
+#northern-lights.purple #dial-background {
+  fill: #a5abcb;
+}
+#northern-lights.purple #face-grating circle, #northern-lights.purple #face-grating line, #northern-lights.purple #face-grating path {
+  stroke: #252525;
+}
+#northern-lights.purple #face-grating #inner-dial {
+  fill: #252525;
+}
+#northern-lights.purple #moon-phase-dial #sky-background {
+  fill: #1c2023;
+}
+#northern-lights.purple .case-back, #northern-lights.purple .lug-bar {
+  fill: #000000;
+}
+#northern-lights.purple #the-case #layer-1 {
+  fill: #040404;
+}
+#northern-lights.purple #the-case #layer-2 {
+  fill: #050505;
+}
+#northern-lights.purple #the-case #layer-3 {
+  fill: #060606;
+}
+#northern-lights.purple #the-case #layer-4 {
+  fill: #070707;
+}
+#northern-lights.purple #the-case #layer-5 {
+  fill: #080808;
+}
+#northern-lights.purple #the-case #layer-6 {
+  fill: #090909;
+}
+#northern-lights.purple #the-case #layer-7 {
+  fill: #101010;
+}
+#northern-lights.purple #the-case #layer-8 {
+  fill: #111111;
+}
+#northern-lights.purple #the-case #layer-9 {
+  fill: #121212;
+}
+#northern-lights.purple #the-case #layer-10 {
+  fill: #131313;
+}
+#northern-lights.purple #the-case #layer-11 {
+  fill: #141414;
+}
+#northern-lights.purple #the-case #layer-12 {
+  fill: #151515;
+}
+#northern-lights.purple #the-case #layer-13 {
+  fill: #161616;
+}
+#northern-lights.purple #the-case #layer-14 {
+  fill: #171717;
+}
+#northern-lights.purple #the-case .lug-main {
+  fill: #171717;
+}
+#northern-lights.purple #the-case .lug-accent {
+  fill: #222222;
+}
+#northern-lights.purple #the-case #case-front {
+  fill: #171717;
+  stroke: #212121;
+}
+#northern-lights.purple #the-case #case-inner {
+  fill: #131415;
+  stroke: #212121;
+}
+#northern-lights.purple #the-crown path {
+  fill: #111111;
+}
+#northern-lights.purple #the-crown .crown-fill {
+  fill: #060606;
+  stroke: #040404;
+}
+#northern-lights.purple #the-crown .crown-fill.accent {
+  fill: #212121;
+}
+#northern-lights.purple #the-crown .crown-fill.fill-1 {
+  fill: #111111;
+}
+#northern-lights.purple #the-crown .crown-fill.fill-2 {
+  fill: #060606;
+}
+#northern-lights.purple #the-crown .crown-fill.fill-3 {
+  fill: #212121;
+}
+#northern-lights.purple.glow #dial-background {
+  fill: #a68efe;
+}
+#northern-lights.purple.glow #face-grating circle, #northern-lights.purple.glow #face-grating line, #northern-lights.purple.glow #face-grating path {
+  stroke: #171717;
+}
+#northern-lights.purple.glow #face-grating #inner-dial {
+  fill: #171717;
+}
+#northern-lights.purple.glow #center-dial .one {
+  fill: #171717;
+  stroke: #090909;
+}
+#northern-lights.purple.glow #center-dial .two {
+  fill: #121212;
+  stroke: #090909;
+}
+#northern-lights.purple.glow #center-dial .three {
+  fill: #303030;
+}
+#northern-lights.purple.glow #hours-hand path, #northern-lights.purple.glow #hours-hand line, #northern-lights.purple.glow #seconds-hand path, #northern-lights.purple.glow #seconds-hand line, #northern-lights.purple.glow #minutes-hand path, #northern-lights.purple.glow #minutes-hand line {
+  stroke: #333333;
+}
+#northern-lights.purple.glow #hours-hand .the-fill, #northern-lights.purple.glow #seconds-hand .the-fill, #northern-lights.purple.glow #minutes-hand .the-fill {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.purple.glow #hour-markers circle {
+  fill: #7efea7;
+  stroke: #333333;
+}
+#northern-lights.purple.glow #moon-phase-dial #sky-background {
+  fill: #181c4c;
+}
+#northern-lights.purple.glow #moon-phase-dial #the-stars polygon {
+  fill: #7efea7;
+}
+#northern-lights.purple.glow .case-back, #northern-lights.purple.glow .lug-bar {
+  fill: #000000;
+}
+#northern-lights.purple.glow #the-case #layer-1 {
+  fill: #040404;
+}
+#northern-lights.purple.glow #the-case #layer-2 {
+  fill: #050505;
+}
+#northern-lights.purple.glow #the-case #layer-3 {
+  fill: #060606;
+}
+#northern-lights.purple.glow #the-case #layer-4 {
+  fill: #070707;
+}
+#northern-lights.purple.glow #the-case #layer-5 {
+  fill: #080808;
+}
+#northern-lights.purple.glow #the-case #layer-6 {
+  fill: #090909;
+}
+#northern-lights.purple.glow #the-case #layer-7 {
+  fill: #101010;
+}
+#northern-lights.purple.glow #the-case #layer-8 {
+  fill: #111111;
+}
+#northern-lights.purple.glow #the-case #layer-9 {
+  fill: #121212;
+}
+#northern-lights.purple.glow #the-case #layer-10 {
+  fill: #131313;
+}
+#northern-lights.purple.glow #the-case #layer-11 {
+  fill: #141414;
+}
+#northern-lights.purple.glow #the-case #layer-12 {
+  fill: #151515;
+}
+#northern-lights.purple.glow #the-case #layer-13 {
+  fill: #161616;
+}
+#northern-lights.purple.glow #the-case #layer-14 {
+  fill: #171717;
+}
+#northern-lights.purple.glow #the-case .lug-main {
+  fill: #171717;
+}
+#northern-lights.purple.glow #the-case .lug-accent {
+  fill: #222222;
+}
+#northern-lights.purple.glow #the-case #case-front {
+  fill: #171717;
+  stroke: #212121;
+}
+#northern-lights.purple.glow #the-case #case-inner {
+  fill: #131415;
+  stroke: #212121;
+}
+#northern-lights.purple.glow #the-crown path {
+  fill: #111111;
+}
+#northern-lights.purple.glow #the-crown .crown-fill {
+  fill: #060606;
+  stroke: #040404;
+}
+#northern-lights.purple.glow #the-crown .crown-fill.accent {
+  fill: #212121;
+}
+#northern-lights.purple.glow #the-crown .crown-fill.fill-1 {
+  fill: #111111;
+}
+#northern-lights.purple.glow #the-crown .crown-fill.fill-2 {
+  fill: #060606;
+}
+#northern-lights.purple.glow #the-crown .crown-fill.fill-3 {
+  fill: #212121;
+}
+#northern-lights.purple.glow #the-face .face-main {
+  fill: #2b2242;
+  stroke: #000033;
+}
+#northern-lights.purple.glow #the-face .eyebrow {
+  fill: #191919;
+}
+#northern-lights.purple.glow #the-face .eye {
+  fill: #28195a;
+}
+#northern-lights.purple.glow #the-face .eye-accent {
+  fill: #121212;
+}
+#northern-lights.purple.glow #the-face .pupil {
+  fill: #3b2788;
+}
+#northern-lights.purple.glow #the-face .forehead-line {
+  fill: #2d4a1c;
+}
+#northern-lights.purple.glow #the-face .cheek-line {
+  fill: #010323;
+}
+#northern-lights.purple.glow #the-face .nose {
+  stroke: #072525;
+}
+#northern-lights.purple.glow #the-face .nose-line {
+  fill: #010323;
+}
+#northern-lights.purple.glow #the-face .lip {
+  fill: #28195a;
+  stroke: #212121;
+}
+#northern-lights.purple.glow #the-face .chin-line {
+  stroke: #010323;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes glow-blue {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(43, 101, 151, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+  }
+}
+@-moz-keyframes glow-blue {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(43, 101, 151, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+  }
+}
+@keyframes glow-blue {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(43, 101, 151, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(43, 101, 151, 0.75);
+  }
+}
+@-webkit-keyframes glow-green {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(90, 131, 63, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+  }
+}
+@-moz-keyframes glow-green {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(90, 131, 63, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+  }
+}
+@keyframes glow-green {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(90, 131, 63, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(90, 131, 63, 0.75);
+  }
+}
+@-webkit-keyframes glow-purple {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(67, 39, 149, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+  }
+}
+@-moz-keyframes glow-purple {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(67, 39, 149, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+  }
+}
+@keyframes glow-purple {
+  50% {
+    width: 260px;
+    margin-left: -130px;
+    height: 220px;
+    top: 200px;
+    background: rgba(67, 39, 149, 0.75);
+    -webkit-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    -moz-box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+    box-shadow: 0px -29px 104px 70px rgba(67, 39, 149, 0.75);
+  }
+}

@@ -4,7 +4,7 @@
 <p align="center">Vending machine-dispensed capsule toys that originated in the 1960s.<br>
  Gashapon is a registered trademark of Bandai<br></p>
 <p align="center">
-<a href="#">WebXR</a> •
+<a href="#">Link</a> •
 <a href="#">Link</a> •
 <a href="#">Link</a> •
 <a href="#">Link</a>

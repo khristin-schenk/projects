@@ -1,0 +1,41 @@
+@import "modern-normalize";
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --color-title: rgba(45, 58, 148, 0.6);
+  --color-cta-bg: rgba(45, 58, 148, 0.6);
+  --color-cta-text: #ebbbb1;
+  --color-highlight: #2d3a94;
+  --color-text-main: rgba(45, 58, 148, 0.6);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root {
+  overflow: auto;
+}
+
+body {
+  position: fixed;
+}
+
+body {
+  font-family: "Spline Sans", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  color: var(--color-text-main);
+  background: #e8bab0;
+
+  user-select: none;
+}
+
+*::selection {
+  background: transparent;
+}

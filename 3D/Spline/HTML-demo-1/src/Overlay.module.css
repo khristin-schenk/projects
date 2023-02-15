@@ -1,0 +1,145 @@
+.scrollContainer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-y: auto;
+  will-change: transform;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section p {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.sectionHero {
+  justify-content: initial;
+}
+
+.sectionLeft {
+  padding: 0 62px;
+}
+
+.sectionRight {
+  text-align: right;
+  padding: 0 62px;
+}
+
+header {
+  margin-top: 70px;
+  margin-bottom: 200px;
+  position: relative;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 54px;
+  margin: 11px 0;
+  color: var(--color-title);
+}
+
+header strong {
+  color: var(--color-highlight);
+}
+
+header sup {
+  display: inline-block;
+  color: var(--color-cta-text);
+  background: var(--color-cta-bg);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 151.5%;
+  padding: 1px 9px;
+  position: relative;
+  top: -48px;
+  left: -25px;
+}
+
+nav {
+  font-size: 32px;
+  line-height: 38px;
+  width: 150px;
+}
+
+nav a {
+  display: block;
+  color: var(--var-color-text-main);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-highlight);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-highlight);
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    margin-top: 38px;
+    margin-bottom: 200px;
+  }
+
+  header h1 {
+    font-size: 48px;
+  }
+
+  header sup {
+    font-size: 12px;
+    padding: 3px 10px;
+    top: -42px;
+    left: -24px;
+  }
+
+  nav,
+  section p {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .sectionLeft {
+    padding: 0 8vw;
+  }
+
+  .sectionRight {
+    padding: 0 8vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  header sup {
+    font-size: 11px;
+    padding: 2px 8px;
+    top: -35px;
+    left: -18px;
+  }
+
+  nav,
+  section p {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.selected {
+  color: var(--color-highlight) !important;
+}

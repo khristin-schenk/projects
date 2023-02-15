@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #e8e0fd;
+color:black;
+}
+
+.section {
+
+  background-image: url(https://assets.codepen.io/6566924/AdobeStock_317397487.svg);
+}
+
+footer {
+  background:url(https://assets.codepen.io/6566924/AdobeStock_317397487.svg);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+section.img-bkgd {
+  background-image: url("https://assets.codepen.io/6566924/AdobeStock_317397487.svg");
+}
+
+.bg-white {
+  box-shadow: 0px 23px 24px rgba(0, 0, 0, 0.16);
+}
+
+.bg-yellow-300 {
+  box-shadow: 0px 23px 24px rgba(0, 0, 0, 0.16);
+}
+
+.font-serif {
+  color:#C2B1EF;
+}
+
+
+.block{
+  color:#2E4566;
+  font-size:1.12rem;
+  text-align:center;
+  text-transform:uppercase;
+}
+
